@@ -13,11 +13,19 @@ const useStyles = makeStyles(() => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
+	about: {
+		userSelect: 'none',
+	},
 	row: {
 		width: '100%',
 		display: 'flex',
 		justifyContent: 'space-evenly',
 		margin: 5,
+		'& svg': {
+			'&:hover': {
+				cursor: 'pointer',
+			},
+		},
 	},
 }));
 
@@ -25,7 +33,9 @@ const Footer: React.FC = function () {
 	const classes = useStyles();
 	return (
 		<div className={classes.footer}>
-			<Typography>Made by Ottomated</Typography>
+			<div className={classes.about}>
+				<Typography>Made by Ottomated</Typography>
+			</div>
 			<div className={classes.row}>
 				<svg
 					width={36}
